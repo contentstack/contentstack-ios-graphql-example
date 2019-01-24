@@ -4,6 +4,7 @@
 
 ## Build generated
 Build/
+node_modules/
 build/
 DerivedData
 GoogleService-Info.plist

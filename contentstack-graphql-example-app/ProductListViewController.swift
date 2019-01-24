@@ -13,26 +13,7 @@ class ProductListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     let refresh : UIRefreshControl = UIRefreshControl(frame: CGRect.zero)
     var productArray: [ProductsQuery.Data.AllProduct.Item] = []
-    func getMinDifference(a:[String], b:[String]) -> [Int] {
-        var c : [Int] = []
-        for i in 0..<a.count {
-            let aString = a[i].sorted()
-            var bString = b[i].sorted()
-            if aString.count != bString.count {
-                c.append(-1)
-            }else if aString == bString {
-                c.append(0)
-            }else {
-                for i in 0..<aString.count {
-                    if let index = bString.firstIndex(of: aString[i]) {
-                        bString.remove(at:  index)
-                    }
-                }
-                c.append(bString.count)
-            }
-        }
-        return c
-    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,42 +40,6 @@ class ProductListViewController: UIViewController {
     func reloadData()  {
         self.collectionView.showsInfiniteScrolling = false
         self.getProductList(skip: 0)
-    }
-    
-    func jo(a: Int, b: Int) {
-        var  array : [Int] = []
-        for value in a...b {
-            var t = value;
-            var sum = 0
-            var remainder = 0
-            while (t != 0)
-            {
-                remainder = t % 10;
-                sum       = sum + remainder;
-                t         = t / 10;
-            }
-            array.append(sum)
-        }
-        
-        var counts: [Int: Int] = [ : ]
-        
-        for item in array {
-            counts[item] = (counts[item] ?? 0) + 1
-        }
-        let winners = counts.values.sorted(by: { (i, j) -> Bool in
-            return i > j
-        })
-        var outPut = [winners.first!]
-        var stop = true
-        var count = 0
-        while stop {
-            count += 1
-            if winners[count] != outPut.first! {
-                stop = false
-            }
-        }
-        outPut.append(count)
-        print(outPut)
     }
     
     func getProductList(skip: Int)  {
