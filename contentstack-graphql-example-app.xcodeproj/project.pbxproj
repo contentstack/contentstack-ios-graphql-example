@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F701B0121DCE5440005D5DF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F701B0021DCE5440005D5DF /* API.swift */; };
+		0F701B0321DCEADB0005D5DF /* variables.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0F701B0221DCEADB0005D5DF /* variables.xcconfig */; };
+		0F701B0521DCECD30005D5DF /* ContentstackCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F701B0421DCECD30005D5DF /* ContentstackCredentials.swift */; };
+		0FDA963621DC92F600D89C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA963521DC92F600D89C85 /* AppDelegate.swift */; };
+		0FDA963821DC92F600D89C85 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA963721DC92F600D89C85 /* ProductListViewController.swift */; };
+		0FDA963B21DC92F600D89C85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDA963921DC92F600D89C85 /* Main.storyboard */; };
+		0FDA963D21DC92F700D89C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDA963C21DC92F700D89C85 /* Assets.xcassets */; };
+		0FDA964021DC92F700D89C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDA963E21DC92F700D89C85 /* LaunchScreen.storyboard */; };
+		0FDA964821DC93DD00D89C85 /* ViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0FDA964721DC93DD00D89C85 /* ViewController.graphql */; };
+		0FDA965021DC9B8A00D89C85 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA964E21DC9B8800D89C85 /* ProductCell.swift */; };
+		0FDA965121DC9B8A00D89C85 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDA964F21DC9B8A00D89C85 /* ProductCell.xib */; };
+		0FDA965421DC9C0C00D89C85 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA965321DC9C0C00D89C85 /* UIView+Additions.swift */; };
+		0FDA965721DC9C5C00D89C85 /* UIImageView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA965621DC9C5C00D89C85 /* UIImageView+Additions.swift */; };
+		0FDA965921DC9C6800D89C85 /* ImageLoadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA965821DC9C6800D89C85 /* ImageLoadManager.swift */; };
+		0FDA965D21DC9C8300D89C85 /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA965C21DC9C8300D89C85 /* ImageDownloadOperation.swift */; };
+		0FDA966121DC9E2700D89C85 /* Data+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA966021DC9E2600D89C85 /* Data+Additions.swift */; };
+		0FDA966321DC9E4500D89C85 /* String+Addtions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA966221DC9E4500D89C85 /* String+Addtions.swift */; };
+		0FEB843521E353730047A6A1 /* ContentstackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB843421E353730047A6A1 /* ContentstackService.swift */; };
+		0FF4878E21E728AA002CA1A3 /* contentstack_graphql_example_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4878D21E728AA002CA1A3 /* contentstack_graphql_example_appTests.swift */; };
+		9758CB27AE8C681316BDED32 /* Pods_contentstack_graphql_example_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0CE3EFC416BD4DD15F01B7 /* Pods_contentstack_graphql_example_app.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0FF4879021E728AA002CA1A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FDA962A21DC92F600D89C85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FDA963121DC92F600D89C85;
+			remoteInfo = "contentstack-graphql-example-app";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F701B0021DCE5440005D5DF /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = "contentstack-graphql-example-app/API.swift"; sourceTree = SOURCE_ROOT; };
+		0F701B0221DCEADB0005D5DF /* variables.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = variables.xcconfig; sourceTree = "<group>"; };
+		0F701B0421DCECD30005D5DF /* ContentstackCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentstackCredentials.swift; sourceTree = "<group>"; };
+		0FDA963221DC92F600D89C85 /* contentstack-graphql-example-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "contentstack-graphql-example-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FDA963521DC92F600D89C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0FDA963721DC92F600D89C85 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		0FDA963A21DC92F600D89C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0FDA963C21DC92F700D89C85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FDA963F21DC92F700D89C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0FDA964121DC92F700D89C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FDA964721DC93DD00D89C85 /* ViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewController.graphql; sourceTree = "<group>"; };
+		0FDA964E21DC9B8800D89C85 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		0FDA964F21DC9B8A00D89C85 /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		0FDA965321DC9C0C00D89C85 /* UIView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
+		0FDA965621DC9C5C00D89C85 /* UIImageView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Additions.swift"; sourceTree = "<group>"; };
+		0FDA965821DC9C6800D89C85 /* ImageLoadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoadManager.swift; sourceTree = "<group>"; };
+		0FDA965C21DC9C8300D89C85 /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
+		0FDA965F21DC9DB100D89C85 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		0FDA966021DC9E2600D89C85 /* Data+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Additions.swift"; sourceTree = "<group>"; };
+		0FDA966221DC9E4500D89C85 /* String+Addtions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Addtions.swift"; sourceTree = "<group>"; };
+		0FEB843421E353730047A6A1 /* ContentstackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentstackService.swift; sourceTree = "<group>"; };
+		0FF4878B21E728AA002CA1A3 /* contentstack-graphql-example-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "contentstack-graphql-example-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FF4878D21E728AA002CA1A3 /* contentstack_graphql_example_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contentstack_graphql_example_appTests.swift; sourceTree = "<group>"; };
+		0FF4878F21E728AA002CA1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		202584FD318040B2293D9E84 /* Pods-contentstack-graphal-example-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-contentstack-graphal-example-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-contentstack-graphal-example-app/Pods-contentstack-graphal-example-app.debug.xcconfig"; sourceTree = "<group>"; };
+		370D7AF7CF2985134746C43C /* Pods_contentstack_graphal_example_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_contentstack_graphal_example_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		640A1F7E3367D303DE15C603 /* Pods-contentstack-graphal-example-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-contentstack-graphal-example-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-contentstack-graphal-example-app/Pods-contentstack-graphal-example-app.release.xcconfig"; sourceTree = "<group>"; };
+		69C557790CA582B91F8D0DAE /* Pods-contentstack-graphql-example-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-contentstack-graphql-example-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app.debug.xcconfig"; sourceTree = "<group>"; };
+		972D31323D51636423C53E15 /* Pods-contentstack-graphql-example-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-contentstack-graphql-example-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app.release.xcconfig"; sourceTree = "<group>"; };
+		9F0CE3EFC416BD4DD15F01B7 /* Pods_contentstack_graphql_example_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_contentstack_graphql_example_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FDA962F21DC92F600D89C85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9758CB27AE8C681316BDED32 /* Pods_contentstack_graphql_example_app.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FF4878821E728AA002CA1A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FDA962921DC92F600D89C85 = {
+			isa = PBXGroup;
+			children = (
+				0F701B0221DCEADB0005D5DF /* variables.xcconfig */,
+				0FDA963421DC92F600D89C85 /* contentstack-graphql-example-app */,
+				0FF4878C21E728AA002CA1A3 /* contentstack-graphql-example-appTests */,
+				0FDA963321DC92F600D89C85 /* Products */,
+				CAC1670C893C258A13729584 /* Pods */,
+				DEEAE3C87C20C8AC195C268E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0FDA963321DC92F600D89C85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA963221DC92F600D89C85 /* contentstack-graphql-example-app.app */,
+				0FF4878B21E728AA002CA1A3 /* contentstack-graphql-example-appTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FDA963421DC92F600D89C85 /* contentstack-graphql-example-app */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA965A21DC9C8300D89C85 /* Module */,
+				0FDA965521DC9C5C00D89C85 /* Protocols */,
+				0FDA965221DC9BFD00D89C85 /* Extension */,
+				0FDA964D21DC9B7400D89C85 /* Cells */,
+				0FDA964C21DC9B6000D89C85 /* GraphQL */,
+				0FDA963521DC92F600D89C85 /* AppDelegate.swift */,
+				0FDA963721DC92F600D89C85 /* ProductListViewController.swift */,
+				0FDA965F21DC9DB100D89C85 /* Bridging-Header.h */,
+				0FDA963921DC92F600D89C85 /* Main.storyboard */,
+				0FDA963C21DC92F700D89C85 /* Assets.xcassets */,
+				0FDA963E21DC92F700D89C85 /* LaunchScreen.storyboard */,
+				0FDA964121DC92F700D89C85 /* Info.plist */,
+				0F701B0421DCECD30005D5DF /* ContentstackCredentials.swift */,
+				0FEB843421E353730047A6A1 /* ContentstackService.swift */,
+			);
+			path = "contentstack-graphql-example-app";
+			sourceTree = "<group>";
+		};
+		0FDA964C21DC9B6000D89C85 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				0F701B0021DCE5440005D5DF /* API.swift */,
+				0FDA964721DC93DD00D89C85 /* ViewController.graphql */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		0FDA964D21DC9B7400D89C85 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA964E21DC9B8800D89C85 /* ProductCell.swift */,
+				0FDA964F21DC9B8A00D89C85 /* ProductCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0FDA965221DC9BFD00D89C85 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA966221DC9E4500D89C85 /* String+Addtions.swift */,
+				0FDA966021DC9E2600D89C85 /* Data+Additions.swift */,
+				0FDA965821DC9C6800D89C85 /* ImageLoadManager.swift */,
+				0FDA965321DC9C0C00D89C85 /* UIView+Additions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0FDA965521DC9C5C00D89C85 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA965621DC9C5C00D89C85 /* UIImageView+Additions.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0FDA965A21DC9C8300D89C85 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA965B21DC9C8300D89C85 /* Operations */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		0FDA965B21DC9C8300D89C85 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA965C21DC9C8300D89C85 /* ImageDownloadOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		0FF4878C21E728AA002CA1A3 /* contentstack-graphql-example-appTests */ = {
+			isa = PBXGroup;
+			children = (
+				0FF4878D21E728AA002CA1A3 /* contentstack_graphql_example_appTests.swift */,
+				0FF4878F21E728AA002CA1A3 /* Info.plist */,
+			);
+			path = "contentstack-graphql-example-appTests";
+			sourceTree = "<group>";
+		};
+		CAC1670C893C258A13729584 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				202584FD318040B2293D9E84 /* Pods-contentstack-graphal-example-app.debug.xcconfig */,
+				640A1F7E3367D303DE15C603 /* Pods-contentstack-graphal-example-app.release.xcconfig */,
+				69C557790CA582B91F8D0DAE /* Pods-contentstack-graphql-example-app.debug.xcconfig */,
+				972D31323D51636423C53E15 /* Pods-contentstack-graphql-example-app.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DEEAE3C87C20C8AC195C268E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				370D7AF7CF2985134746C43C /* Pods_contentstack_graphal_example_app.framework */,
+				9F0CE3EFC416BD4DD15F01B7 /* Pods_contentstack_graphql_example_app.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FDA963121DC92F600D89C85 /* contentstack-graphql-example-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FDA964421DC92F700D89C85 /* Build configuration list for PBXNativeTarget "contentstack-graphql-example-app" */;
+			buildPhases = (
+				620E6471F19D721A35358B73 /* [CP] Check Pods Manifest.lock */,
+				0FDA964921DC93E700D89C85 /* Generate Apollo GraphQL API */,
+				0FDA962E21DC92F600D89C85 /* Sources */,
+				0FDA962F21DC92F600D89C85 /* Frameworks */,
+				0FDA963021DC92F600D89C85 /* Resources */,
+				0DC089F35BC223B5DCA25E5F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "contentstack-graphql-example-app";
+			productName = "contentstack-graphal-example-app";
+			productReference = 0FDA963221DC92F600D89C85 /* contentstack-graphql-example-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0FF4878A21E728AA002CA1A3 /* contentstack-graphql-example-appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FF4879421E728AA002CA1A3 /* Build configuration list for PBXNativeTarget "contentstack-graphql-example-appTests" */;
+			buildPhases = (
+				0FF4878721E728AA002CA1A3 /* Sources */,
+				0FF4878821E728AA002CA1A3 /* Frameworks */,
+				0FF4878921E728AA002CA1A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FF4879121E728AA002CA1A3 /* PBXTargetDependency */,
+			);
+			name = "contentstack-graphql-example-appTests";
+			productName = "contentstack-graphql-example-appTests";
+			productReference = 0FF4878B21E728AA002CA1A3 /* contentstack-graphql-example-appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FDA962A21DC92F600D89C85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Contentstack;
+				TargetAttributes = {
+					0FDA963121DC92F600D89C85 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					0FF4878A21E728AA002CA1A3 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 0FDA963121DC92F600D89C85;
+					};
+				};
+			};
+			buildConfigurationList = 0FDA962D21DC92F600D89C85 /* Build configuration list for PBXProject "contentstack-graphql-example-app" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0FDA962921DC92F600D89C85;
+			productRefGroup = 0FDA963321DC92F600D89C85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FDA963121DC92F600D89C85 /* contentstack-graphql-example-app */,
+				0FF4878A21E728AA002CA1A3 /* contentstack-graphql-example-appTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0FDA963021DC92F600D89C85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FDA964021DC92F700D89C85 /* LaunchScreen.storyboard in Resources */,
+				0FDA963D21DC92F700D89C85 /* Assets.xcassets in Resources */,
+				0F701B0321DCEADB0005D5DF /* variables.xcconfig in Resources */,
+				0FDA965121DC9B8A00D89C85 /* ProductCell.xib in Resources */,
+				0FDA964821DC93DD00D89C85 /* ViewController.graphql in Resources */,
+				0FDA963B21DC92F600D89C85 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FF4878921E728AA002CA1A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DC089F35BC223B5DCA25E5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
+				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0FDA964921DC93E700D89C85 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-cli.sh codegen:generate --queries=\"$(find . -name '*.graphql')\" --schema=schema.json API.swift\n\n";
+		};
+		620E6471F19D721A35358B73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-contentstack-graphql-example-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FDA962E21DC92F600D89C85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FDA965421DC9C0C00D89C85 /* UIView+Additions.swift in Sources */,
+				0FDA963821DC92F600D89C85 /* ProductListViewController.swift in Sources */,
+				0FDA965021DC9B8A00D89C85 /* ProductCell.swift in Sources */,
+				0FDA965D21DC9C8300D89C85 /* ImageDownloadOperation.swift in Sources */,
+				0F701B0121DCE5440005D5DF /* API.swift in Sources */,
+				0FDA965721DC9C5C00D89C85 /* UIImageView+Additions.swift in Sources */,
+				0FDA966321DC9E4500D89C85 /* String+Addtions.swift in Sources */,
+				0FDA966121DC9E2700D89C85 /* Data+Additions.swift in Sources */,
+				0FDA963621DC92F600D89C85 /* AppDelegate.swift in Sources */,
+				0F701B0521DCECD30005D5DF /* ContentstackCredentials.swift in Sources */,
+				0FEB843521E353730047A6A1 /* ContentstackService.swift in Sources */,
+				0FDA965921DC9C6800D89C85 /* ImageLoadManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FF4878721E728AA002CA1A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FF4878E21E728AA002CA1A3 /* contentstack_graphql_example_appTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FF4879121E728AA002CA1A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FDA963121DC92F600D89C85 /* contentstack-graphql-example-app */;
+			targetProxy = 0FF4879021E728AA002CA1A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0FDA963921DC92F600D89C85 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FDA963A21DC92F600D89C85 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0FDA963E21DC92F700D89C85 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FDA963F21DC92F700D89C85 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0FDA964221DC92F700D89C85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F701B0221DCEADB0005D5DF /* variables.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0FDA964321DC92F700D89C85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F701B0221DCEADB0005D5DF /* variables.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FDA964521DC92F700D89C85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69C557790CA582B91F8D0DAE /* Pods-contentstack-graphql-example-app.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32QM644P7J;
+				INFOPLIST_FILE = "$(SRCROOT)/contentstack-graphql-example-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.contentstack.contentstack-graphql-example-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "contentstack-graphql-example-app/Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0FDA964621DC92F700D89C85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 972D31323D51636423C53E15 /* Pods-contentstack-graphql-example-app.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32QM644P7J;
+				INFOPLIST_FILE = "$(SRCROOT)/contentstack-graphql-example-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.contentstack.contentstack-graphql-example-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "contentstack-graphql-example-app/Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0FF4879221E728AA002CA1A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32QM644P7J;
+				INFOPLIST_FILE = "contentstack-graphql-example-appTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.contentstack.contentstack-graphql-example-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/contentstack-graphql-example-app.app/contentstack-graphql-example-app";
+			};
+			name = Debug;
+		};
+		0FF4879321E728AA002CA1A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32QM644P7J;
+				INFOPLIST_FILE = "contentstack-graphql-example-appTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.contentstack.contentstack-graphql-example-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/contentstack-graphql-example-app.app/contentstack-graphql-example-app";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FDA962D21DC92F600D89C85 /* Build configuration list for PBXProject "contentstack-graphql-example-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FDA964221DC92F700D89C85 /* Debug */,
+				0FDA964321DC92F700D89C85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FDA964421DC92F700D89C85 /* Build configuration list for PBXNativeTarget "contentstack-graphql-example-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FDA964521DC92F700D89C85 /* Debug */,
+				0FDA964621DC92F700D89C85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FF4879421E728AA002CA1A3 /* Build configuration list for PBXNativeTarget "contentstack-graphql-example-appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FF4879221E728AA002CA1A3 /* Debug */,
+				0FF4879321E728AA002CA1A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0FDA962A21DC92F600D89C85 /* Project object */;
+}
