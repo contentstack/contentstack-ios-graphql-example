@@ -31,7 +31,7 @@ class ProductListViewController: UIViewController {
         self.title = "Products"
         if let flowdelegate = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             let width = (UIScreen.main.bounds.width - 30)/2
-            flowdelegate.itemSize = CGSize(width: width, height: width)
+            flowdelegate.itemSize = CGSize(width: width, height: width  + 40)
         }
         collectionView.registerNib(ProductCell.self)
     }
@@ -60,8 +60,10 @@ class ProductListViewController: UIViewController {
                 return
             }
             var indexPaths : [IndexPath] = []
+            var index = slf.productArray.count
             for product in products {
-                indexPaths.append(IndexPath(item: (slf.productArray.count - 1), section: 0))
+                indexPaths.append(IndexPath(item: (index), section: 0))
+                index += 1
                 slf.productArray.append(product!)
             }
             slf.collectionView.insertItems(at: indexPaths)

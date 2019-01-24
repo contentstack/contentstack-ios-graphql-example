@@ -162,8 +162,8 @@ public final class ProductsQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(filename: String? = nil, fileSize: String? = nil, url: String? = nil) {
-            self.init(unsafeResultMap: ["__typename": "Assets", "filename": filename, "file_size": fileSize, "url": url])
+          public init(filename: String? = nil, url: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Assets", "filename": filename, "url": url])
           }
 
           public var __typename: String {
@@ -208,14 +208,13 @@ public final class ProductsQuery: GraphQLQuery {
 
 public struct Asset: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment Asset on Assets {\n  __typename\n  filename\n  file_size\n  url\n}"
+    "fragment Asset on Assets {\n  __typename\n  filename\n  url\n}"
 
   public static let possibleTypes = ["Assets"]
 
   public static let selections: [GraphQLSelection] = [
     GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
     GraphQLField("filename", type: .scalar(String.self)),
-    GraphQLField("file_size", type: .scalar(String.self)),
     GraphQLField("url", type: .scalar(String.self)),
   ]
 
@@ -225,8 +224,8 @@ public struct Asset: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(filename: String? = nil, fileSize: String? = nil, url: String? = nil) {
-    self.init(unsafeResultMap: ["__typename": "Assets", "filename": filename, "file_size": fileSize, "url": url])
+  public init(filename: String? = nil, url: String? = nil) {
+    self.init(unsafeResultMap: ["__typename": "Assets", "filename": filename, "url": url])
   }
 
   public var __typename: String {
@@ -244,15 +243,6 @@ public struct Asset: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "filename")
-    }
-  }
-
-  public var fileSize: String? {
-    get {
-      return resultMap["file_size"] as? String
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "file_size")
     }
   }
 
