@@ -1,5 +1,5 @@
 query Products($skip: Int = 0 ,$limit: Int){
-    all_product(locale:"en-us", skip:$skip, limit:$limit) {
+    all_product(locale:"en-us",skip:$skip,limit:$limit) {
         items {
             title
             description
@@ -14,6 +14,6 @@ query Products($skip: Int = 0 ,$limit: Int){
 
 fragment Asset on Assets {
     filename
-    file_size
     url
 }
+
