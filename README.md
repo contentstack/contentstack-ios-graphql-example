@@ -29,7 +29,9 @@ For this app, we need one content type: Product. Here’s what it is needed for:
 
 -   **Product**: Lets you add the product content into your app.  
 
-For quick integration, we have already created the content type. Download the content types and [import](https://www.contentstack.com/docs/guide/content-types#importing-a-content-type) it to your stack. (If needed, you can [create your own content types](https://www.contentstack.com/docs/guide/content-types#creating-a-content-type). Read more about [Content Types](https://www.contentstack.com/docs/guide/content-types).)
+For quick integration, we have already created the content type. [Download the content types](https://github.com/contentstack/contentstack-ios-graphql-example/raw/master/contentstack-graphql-example-app/ContentTypes.zip) and [import](https://www.contentstack.com/docs/guide/content-types#importing-a-content-type) it to your stack. (If needed, you can [create your own content types](https://www.contentstack.com/docs/guide/content-types#creating-a-content-type). Read more about [Content Types](https://www.contentstack.com/docs/guide/content-types).)
+
+
 
 Now that all the content types are ready, let’s add some content for your Product app.
 
