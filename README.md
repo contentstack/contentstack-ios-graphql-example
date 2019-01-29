@@ -8,6 +8,9 @@ This is an example app built using Contentstack GraphQL with Apollo iOS SDK. You
 
 Perform the steps given below to get started with this app.
 
+<img src='https://www.contentstack.com/docs/assets/blt01965cd8fd1e59c3/ios_large.png' width='650' height='550'/>
+
+
 ## Prerequisite
 
 -   [Xcode 10.1 and later](https://developer.apple.com/xcode/)

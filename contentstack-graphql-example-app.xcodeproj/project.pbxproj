@@ -26,6 +26,7 @@
 		0FDA966321DC9E4500D89C85 /* String+Addtions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA966221DC9E4500D89C85 /* String+Addtions.swift */; };
 		0FEB843521E353730047A6A1 /* ContentstackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB843421E353730047A6A1 /* ContentstackService.swift */; };
 		0FF4878E21E728AA002CA1A3 /* contentstack_graphql_example_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4878D21E728AA002CA1A3 /* contentstack_graphql_example_appTests.swift */; };
+		0FF9DC7B2200776000BA1FFF /* ProductList.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9DC7A2200776000BA1FFF /* ProductList.png */; };
 		9758CB27AE8C681316BDED32 /* Pods_contentstack_graphql_example_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0CE3EFC416BD4DD15F01B7 /* Pods_contentstack_graphql_example_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		0FF4878B21E728AA002CA1A3 /* contentstack-graphql-example-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "contentstack-graphql-example-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF4878D21E728AA002CA1A3 /* contentstack_graphql_example_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contentstack_graphql_example_appTests.swift; sourceTree = "<group>"; };
 		0FF4878F21E728AA002CA1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FF9DC7A2200776000BA1FFF /* ProductList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProductList.png; sourceTree = "<group>"; };
 		202584FD318040B2293D9E84 /* Pods-contentstack-graphal-example-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-contentstack-graphal-example-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-contentstack-graphal-example-app/Pods-contentstack-graphal-example-app.debug.xcconfig"; sourceTree = "<group>"; };
 		370D7AF7CF2985134746C43C /* Pods_contentstack_graphal_example_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_contentstack_graphal_example_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		640A1F7E3367D303DE15C603 /* Pods-contentstack-graphal-example-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-contentstack-graphal-example-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-contentstack-graphal-example-app/Pods-contentstack-graphal-example-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		0FDA963421DC92F600D89C85 /* contentstack-graphql-example-app */ = {
 			isa = PBXGroup;
 			children = (
+				0FF9DC7A2200776000BA1FFF /* ProductList.png */,
 				0FDA965A21DC9C8300D89C85 /* Module */,
 				0FDA965521DC9C5C00D89C85 /* Protocols */,
 				0FDA965221DC9BFD00D89C85 /* Extension */,
@@ -305,6 +308,7 @@
 				0FDA965121DC9B8A00D89C85 /* ProductCell.xib in Resources */,
 				0FDA964821DC93DD00D89C85 /* ViewController.graphql in Resources */,
 				0FDA963B21DC92F600D89C85 /* Main.storyboard in Resources */,
+				0FF9DC7B2200776000BA1FFF /* ProductList.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
