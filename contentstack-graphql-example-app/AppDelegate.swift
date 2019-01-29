@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         contentstackService = ContentstackService()
+        UINavigationBar.appearance().barTintColor = UIColor(displayP3Red: 227/255.0, green: 73/255.0, blue: 80/255.0, alpha: 1)
+//        UINavigationBar.appearance().Translucent
+        //UINavigationBar.appearance().bar = UIColor(displayP3Red: 227/255.0, green: 73/255.0, blue: 80/255.0, alpha: 1)
+
         return true
     }
 
