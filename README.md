@@ -65,6 +65,13 @@ Refer the [Downloading Schema](https://www.apollographql.com/docs/ios/downloadin
 
 ## Step 8: Write your GraphQL queries
 
+Contentstack provides a GraphQL playground, which is a GraphiQL interface, to test your GraphQL queries in your browser. Use this interface to write and test your queries.
+
+Open a browser of your choice and hit the URL given below:
+```
+https://graphql.contentstack.io/stacks/api_key/explore?access_token=environment-specific_delivery_token&environment=environment_name
+```
+
 Now to get the list of all entries of the Product content type within the ProductListViewController.swift create a file named ProductListViewController.graphql and add the following code snippet to get.
 ```
 query Products($skip: Int = 0 ,$limit: Int){
@@ -85,12 +92,6 @@ fragment Assets on SysAssets {
 }
   ```
 
-Contentstack provides a GraphQL playground, which is a GraphiQL interface, to test your GraphQL queries in your browser. Use this interface to write and test your queries.
-
-Open a browser of your choice and hit the URL given below:
-```
-https://graphql.contentstack.io/stacks/api_key/explore?access_token=environment-specific_delivery_token&environment=environment_name
-```
 Note:
 -   If you have pieces of data that you may want to reuse in multiple places, make use of fragments. Refer the [Using fragments](https://www.apollographql.com/docs/ios/fragments.html) doc for more details.
 -   Apollo iOS generates code from queries and mutations contained in .graphql files in your target.
