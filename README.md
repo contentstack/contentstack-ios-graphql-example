@@ -129,8 +129,6 @@ let apollo: ApolloClient = {
 }()
   ```
 
-To know how to add additional headers to requests, and to include authentication details, refer the [Adding additional headers](https://www.apollographql.com/docs/ios/initialization.html#adding-headers) section.
-
 ## Step 11: Build application to generate Swift query models
 Finally, integrate Apollo Client into your app, pass the Swift model and queries generated above, and fetch the relevant data using the following code snippet:
 ```
