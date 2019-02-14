@@ -143,5 +143,5 @@ apollo.fetch(query: ProductsQuery(skip: skip, limit: 5)) {[weak  self] result, e
 	}  
 }
 ```
-# Step 12: Build and run your application
+## Step 12: Build and run your application
 Now that we have a working project, you can build and run it.
