@@ -59,7 +59,7 @@ Install Apollo.framework into your project using Carthage, CocoaPods, or by manu
 ## Step 7: Download your schema
 Download the GraphQL schema for your content model using Apollo CLI, and place it in the root directory of your Xcode project:
 ```
-apollo schema:download --header "access_token:cs551d666a332e455a34174bd0" --endpoint "https://graphql.contentstack.io/stacks/api_key/?access_token=environment-specific_delivery_token&environment=environment_name"
+apollo schema:download --endpoint "https://graphql.contentstack.io/stacks/api_key/explore?access_token=environment-specific_delivery_token&environment=environment_name"
 ```
 Refer the [Downloading Schema](https://www.apollographql.com/docs/ios/downloading-schema.html) doc for more information.
 
