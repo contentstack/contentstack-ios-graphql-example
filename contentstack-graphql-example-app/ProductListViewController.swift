@@ -43,7 +43,7 @@ class ProductListViewController: UIViewController {
     }
     
     func getProductList(skip: Int)  {
-        AppDelegate.share.contentstackService.graphQLClient.fetch(query: ProductsQuery(skip: skip, limit: 5)) {[weak self]  result, error in
+        AppDelegate.share.contentstackService.graphQLClient.fetch(query: ProductsQuery(skip: skip, limit: 5), cachePolicy: CachePolicy.fetchIgnoringCacheData, queue: DispatchQueue.main, resultHandler: {[weak self]  result, error in
             guard let slf = self else {
                 return
             }
@@ -67,10 +67,10 @@ class ProductListViewController: UIViewController {
                 slf.productArray.append(product!)
             }
             slf.collectionView.insertItems(at: indexPaths)
-
+            
             slf.collectionView.showsInfiniteScrolling = true
             slf.collectionView.infiniteScrollingView.stopAnimating()
-        }
+        })
     }
 }
 
