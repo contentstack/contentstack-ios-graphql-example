@@ -147,3 +147,9 @@ apollo.fetch(query: ProductsQuery(skip: skip, limit: 5)) {[weak  self] result, e
 ```
 ## Step 12: Build and run your application
 Now that we have a working project, you can build and run it.
+
+## More Resources
+- [Getting started with iOS SDK](https://www.contentstack.com/docs/platforms/ios)
+- [Using GraphQL queries with iOS SDK](https://www.contentstack.com/docs/guide/contentstack-graphql-api/using-graphql-with-contentstack-ios-sdk)
+- [GraphQL API documentation](https://www.contentstack.com/docs/apis/graphql-content-delivery-api/)
+
