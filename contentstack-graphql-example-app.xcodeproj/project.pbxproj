@@ -330,7 +330,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
 			);
@@ -343,7 +343,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0FDA964921DC93E700D89C85 /* Generate Apollo GraphQL API */ = {
