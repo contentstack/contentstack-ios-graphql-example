@@ -63,7 +63,7 @@ Refer the [Downloading Schema](https://www.apollographql.com/docs/ios/downloadin
 ## Step 8: Write your GraphQL queries
 Contentstack provides a GraphQL playground, which is a GraphiQL interface, to test your GraphQL queries in your browser. Use this interface to write and test your queries.
 
-Open a browser of your choice and hit the URL given below (after entering the required details):
+Open a browser of your choice and hit the URL given below:
 ```
 https://www.contentstack.com/docs/apis/graphql-content-delivery-api/explorer/
 ```
