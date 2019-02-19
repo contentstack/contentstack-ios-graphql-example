@@ -17,7 +17,7 @@ This document covers the steps to get this app up and running for you. Try out t
 ## Step 1: Create a stack
 Log in to your Contentstack account, and [create a new stack](https://www.contentstack.com/docs/guide/stack#create-a-new-stack). Read more about [stack](https://www.contentstack.com/docs/guide/stack).
 
-## Step 2: Add a publishing environment
+## Step 2: Add a publishing environment 
 [Add a publishing environment](https://www.contentstack.com/docs/guide/environments#add-an-environment) to publish your content in Contentstack. Provide the necessary details as per your requirement. Read more about [environments](https://www.contentstack.com/docs/guide/environments).
 
 ## Step 3: Import content types
@@ -55,7 +55,7 @@ Install Apollo.framework into your project using Carthage, CocoaPods, or by manu
 ## Step 7: Download your schema
 Download the GraphQL schema for your content model using Apollo CLI, and place it in the root directory of your Xcode project:
 ```
-apollo schema:download --endpoint "https://graphql.contentstack.io/stacks/api_key/explore?access_token=environment-specific_delivery_token&environment=environment_name"
+apollo schema:download --endpoint "https://graphql.contentstack.io/stacks/api_key?access_token=environment-specific_delivery_token&environment=environment_name"
 ```
   
 Refer the [Downloading Schema](https://www.apollographql.com/docs/ios/downloading-schema.html) doc for more information.
@@ -65,7 +65,7 @@ Contentstack provides a GraphQL playground, which is a GraphiQL interface, to te
 
 Open a browser of your choice and hit the URL given below (after entering the required details):
 ```
-https://graphql.contentstack.io/stacks/api_key/explore?access_token=environment-specific_delivery_token&environment=environment_name
+https://www.contentstack.com/docs/apis/graphql-content-delivery-api/explorer/
 ```
  
 Now to get the list of all entries of the Product content type within the ProductListViewController.swift create a file named ProductListViewController.graphql and add the following code snippet to get.
