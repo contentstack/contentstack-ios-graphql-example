@@ -1,4 +1,4 @@
-# Build an example app using Contentstack iOS SDK, GraphQL API, and Apollo Client
+# Build an example app using Contentstack GraphQL API, and Apollo Client
 
 We have created a sample product catalog app that is built using Contentstack’s iOS SDK. The content of this app is powered by Contentstack GraphQL APIs, and the app uses Apollo client on the client side to consume GraphQL APIs.
 
@@ -150,6 +150,6 @@ Now that we have a working project, you can build and run it.
 
 ## More Resources
 - [Getting started with iOS SDK](https://www.contentstack.com/docs/platforms/ios)
-- [Using GraphQL queries with Apollo Client iOS SDK](https://www.contentstack.com/docs/guide/contentstack-graphql-api/using-graphql-with-contentstack-ios-sdk)
+- [Using GraphQL queries with Apollo Client iOS SDK](https://www.contentstack.com/docs/guide/contentstack-graphql-api/using-graphql-with-apollo-client-ios-sdk)
 - [GraphQL API documentation](https://www.contentstack.com/docs/apis/graphql-content-delivery-api/)
 
