@@ -128,7 +128,7 @@ To do this, define a global variable in AppDelegate.swift by using an immediatel
 
 ```
 let apollo: ApolloClient = {  
-	let url = URL(string: "https://graphql.contentstack.io/stacks/api_key?access_token=environment-specific_delivery_token&environment=environment_name")!  
+	let url = URL(string: "https://graphql.contentstack.io/stacks/<API_KEY>?access_token=<ENVIRONMENT_SPECIFIC_DELIVERY_TOKEN>&environment=<ENVIRONMENT_NAME>")!  
 	return  ApolloClient(networkTransport: HTTPNetworkTransport(url: url))  
 }()
 ```
