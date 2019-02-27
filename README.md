@@ -41,7 +41,7 @@ To get your app up and running quickly, we have created a sample iOS app for thi
 $ git clone https://github.com/contentstack/contentstack-ios-graphql-example.git
 ```
   
-Once you have downloaded the project, add your Contentstack API Key, Delivery Token, and Environment to the project during the SDK initialization step. (Learn how to find your Stack's [API Key and Delivery Token](https://www.contentstack.com/docs/guide/stack#edit-a-stack).
+Once you have downloaded the project, add your Contentstack API Key, Delivery Token, and Environment to the project during the SDK initialization step. (Learn how to find your Stack's [API Key](https://www.contentstack.com/docs/guide/stack#edit-a-stack) and [Delivery Token](https://www.contentstack.com/docs/guide/tokens#create-a-delivery-token).
 
 Open variables.xcconfig and inject your credentials so it looks like this:
 ```
@@ -57,7 +57,7 @@ Install Apollo.framework into your project using Carthage, CocoaPods, or by manu
 ## Step 7: Download your schema
 Download the GraphQL schema for your content model using Apollo CLI, and place it in the root directory of your Xcode project:
 ```
-apollo schema:download --endpoint "https://graphql.contentstack.com/stacks/<API_KEY>?access_token=<ENVIRONMENT_SPECIFIC_DELIVERY_TOKEN>&environment=<ENVIRONMENT_NAME>"
+apollo schema:download --endpoint="https://graphql.contentstack.com/stacks/<API_KEY>?access_token=<ENVIRONMENT_SPECIFIC_DELIVERY_TOKEN>&environment=<ENVIRONMENT_NAME>"
 ```
   
 Refer the [Downloading Schema](https://www.apollographql.com/docs/ios/downloading-schema.html) doc for more information.
@@ -67,9 +67,9 @@ Contentstack provides a GraphQL playground, which is a GraphiQL interface, to te
 
 Open a browser of your choice and hit the URL given below:
 ```
-https://www.contentstack.com/docs/apis/graphql-content-delivery-api/explorer/
+https://www.contentstack.com/docs/apis/graphql-content-delivery-api/explorer?api_key=<API_KEY>&access_token=<ENVIRONMENT_SPECIFIC_DELIVERY_TOKEN>&environment=<ENVIRONMENT_NAME>
 ```
- 
+
 Now to get the list of all entries of the Product content type within the ProductListViewController.swift create a file named ProductListViewController.graphql and add the following code snippet to get.
 
 ```
