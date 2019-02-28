@@ -75,21 +75,21 @@ Now to get the list of all entries of the Product content type within the Produc
 ```
 query Products($skip: Int = 0 ,$limit: Int){
 	all_product(locale:"en-us", skip:$skip, limit:$limit) {
-		items {
+	 	items {
 			title
-			description
+      			description
 			price
-			featured_image {
-				...Assets
-			}
-		}
+      			featured_image {
+        			...Asset
+      			}
+	   	}
 	}
 }
 
-fragment Assets on SysAssets {
-	filename
-	file_size
+fragment Asset on Assets {
 	url
+ 	filename
+  	file_size
 }
 ```
 
