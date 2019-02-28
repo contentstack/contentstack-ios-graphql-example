@@ -41,7 +41,7 @@ To get your app up and running quickly, we have created a sample iOS app for thi
 $ git clone https://github.com/contentstack/contentstack-ios-graphql-example.git
 ```
   
-Once you have downloaded the project, add your Contentstack API Key, Delivery Token, and Environment to the project during the SDK initialization step. (Learn how to find your Stack's [API Key](https://www.contentstack.com/docs/guide/stack#edit-a-stack) and [Delivery Token](https://www.contentstack.com/docs/guide/tokens#create-a-delivery-token).
+Once you have downloaded the project, add your Contentstack API Key, Delivery Token, and Environment to the project during the SDK initialization step. (Learn how to find your Stack's [API Key](https://www.contentstack.com/docs/guide/stack#edit-a-stack) and [Delivery Token](https://www.contentstack.com/docs/guide/tokens#create-a-delivery-token)).
 
 Open variables.xcconfig and inject your credentials so it looks like this:
 ```
