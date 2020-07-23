@@ -26,18 +26,6 @@ public final class ProductsQuery: GraphQLQuery {
               }
             }
           }
-          categoryConnection {
-            __typename
-            edges {
-              __typename
-              node {
-                __typename
-                ... on Category {
-                  category_type
-                }
-              }
-            }
-          }
         }
       }
     }
@@ -137,7 +125,6 @@ public final class ProductsQuery: GraphQLQuery {
             GraphQLField("description", type: .scalar(String.self)),
             GraphQLField("price", type: .scalar(Int.self)),
             GraphQLField("featured_imageConnection", arguments: ["limit": 10], type: .object(FeaturedImageConnection.selections)),
-            GraphQLField("categoryConnection", type: .object(CategoryConnection.selections)),
           ]
         }
 
@@ -147,8 +134,8 @@ public final class ProductsQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(title: String? = nil, description: String? = nil, price: Int? = nil, featuredImageConnection: FeaturedImageConnection? = nil, categoryConnection: CategoryConnection? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Product", "title": title, "description": description, "price": price, "featured_imageConnection": featuredImageConnection.flatMap { (value: FeaturedImageConnection) -> ResultMap in value.resultMap }, "categoryConnection": categoryConnection.flatMap { (value: CategoryConnection) -> ResultMap in value.resultMap }])
+        public init(title: String? = nil, description: String? = nil, price: Int? = nil, featuredImageConnection: FeaturedImageConnection? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Product", "title": title, "description": description, "price": price, "featured_imageConnection": featuredImageConnection.flatMap { (value: FeaturedImageConnection) -> ResultMap in value.resultMap }])
         }
 
         public var __typename: String {
@@ -197,16 +184,6 @@ public final class ProductsQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue?.resultMap, forKey: "featured_imageConnection")
-          }
-        }
-
-        /// Multi reference
-        public var categoryConnection: CategoryConnection? {
-          get {
-            return (resultMap["categoryConnection"] as? ResultMap).flatMap { CategoryConnection(unsafeResultMap: $0) }
-          }
-          set {
-            resultMap.updateValue(newValue?.resultMap, forKey: "categoryConnection")
           }
         }
 
@@ -345,188 +322,7 @@ public final class ProductsQuery: GraphQLQuery {
             }
           }
         }
-
-        public struct CategoryConnection: GraphQLSelectionSet {
-          public static let possibleTypes: [String] = ["ProductCategoryConnection"]
-
-          public static var selections: [GraphQLSelection] {
-            return [
-              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-              GraphQLField("edges", type: .list(.object(Edge.selections))),
-            ]
-          }
-
-          public private(set) var resultMap: ResultMap
-
-          public init(unsafeResultMap: ResultMap) {
-            self.resultMap = unsafeResultMap
-          }
-
-          public init(edges: [Edge?]? = nil) {
-            self.init(unsafeResultMap: ["__typename": "ProductCategoryConnection", "edges": edges.flatMap { (value: [Edge?]) -> [ResultMap?] in value.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } } }])
-          }
-
-          public var __typename: String {
-            get {
-              return resultMap["__typename"]! as! String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "__typename")
-            }
-          }
-
-          /// Reference field edges
-          public var edges: [Edge?]? {
-            get {
-              return (resultMap["edges"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Edge?] in value.map { (value: ResultMap?) -> Edge? in value.flatMap { (value: ResultMap) -> Edge in Edge(unsafeResultMap: value) } } }
-            }
-            set {
-              resultMap.updateValue(newValue.flatMap { (value: [Edge?]) -> [ResultMap?] in value.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } } }, forKey: "edges")
-            }
-          }
-
-          public struct Edge: GraphQLSelectionSet {
-            public static let possibleTypes: [String] = ["ProductCategoryEdge"]
-
-            public static var selections: [GraphQLSelection] {
-              return [
-                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                GraphQLField("node", type: .object(Node.selections)),
-              ]
-            }
-
-            public private(set) var resultMap: ResultMap
-
-            public init(unsafeResultMap: ResultMap) {
-              self.resultMap = unsafeResultMap
-            }
-
-            public init(node: Node? = nil) {
-              self.init(unsafeResultMap: ["__typename": "ProductCategoryEdge", "node": node.flatMap { (value: Node) -> ResultMap in value.resultMap }])
-            }
-
-            public var __typename: String {
-              get {
-                return resultMap["__typename"]! as! String
-              }
-              set {
-                resultMap.updateValue(newValue, forKey: "__typename")
-              }
-            }
-
-            /// Reference nodes
-            public var node: Node? {
-              get {
-                return (resultMap["node"] as? ResultMap).flatMap { Node(unsafeResultMap: $0) }
-              }
-              set {
-                resultMap.updateValue(newValue?.resultMap, forKey: "node")
-              }
-            }
-
-            public struct Node: GraphQLSelectionSet {
-              public static let possibleTypes: [String] = ["Category"]
-
-              public static var selections: [GraphQLSelection] {
-                return [
-                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                  GraphQLField("category_type", type: .scalar(String.self)),
-                ]
-              }
-
-              public private(set) var resultMap: ResultMap
-
-              public init(unsafeResultMap: ResultMap) {
-                self.resultMap = unsafeResultMap
-              }
-
-              public init(categoryType: String? = nil) {
-                self.init(unsafeResultMap: ["__typename": "Category", "category_type": categoryType])
-              }
-
-              public var __typename: String {
-                get {
-                  return resultMap["__typename"]! as! String
-                }
-                set {
-                  resultMap.updateValue(newValue, forKey: "__typename")
-                }
-              }
-
-              /// Text field
-              public var categoryType: String? {
-                get {
-                  return resultMap["category_type"] as? String
-                }
-                set {
-                  resultMap.updateValue(newValue, forKey: "category_type")
-                }
-              }
-            }
-          }
-        }
       }
-    }
-  }
-}
-
-public struct CategoryFile: GraphQLFragment {
-  /// The raw GraphQL definition of this fragment.
-  public static let fragmentDefinition: String =
-    """
-    fragment CategoryFile on Category {
-      __typename
-      category_type
-      url
-    }
-    """
-
-  public static let possibleTypes: [String] = ["Category"]
-
-  public static var selections: [GraphQLSelection] {
-    return [
-      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-      GraphQLField("category_type", type: .scalar(String.self)),
-      GraphQLField("url", type: .scalar(String.self)),
-    ]
-  }
-
-  public private(set) var resultMap: ResultMap
-
-  public init(unsafeResultMap: ResultMap) {
-    self.resultMap = unsafeResultMap
-  }
-
-  public init(categoryType: String? = nil, url: String? = nil) {
-    self.init(unsafeResultMap: ["__typename": "Category", "category_type": categoryType, "url": url])
-  }
-
-  public var __typename: String {
-    get {
-      return resultMap["__typename"]! as! String
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "__typename")
-    }
-  }
-
-  /// Text field
-  public var categoryType: String? {
-    get {
-      return resultMap["category_type"] as? String
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "category_type")
-    }
-  }
-
-  /// Text field
-  public var url: String? {
-    get {
-      return resultMap["url"] as? String
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "url")
     }
   }
 }
