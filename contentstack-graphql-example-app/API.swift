@@ -1,12 +1,51 @@
+// @generated
 //  This file was automatically generated and should not be edited.
 
 import Apollo
+import Foundation
 
 public final class ProductsQuery: GraphQLQuery {
-  public let operationDefinition =
-    "query Products($skip: Int = 0, $limit: Int) {\n  all_product(locale: \"en-us\", skip: $skip, limit: $limit) {\n    __typename\n    items {\n      __typename\n      title\n      description\n      price\n      featured_image {\n        __typename\n        ...Asset\n      }\n    }\n  }\n}"
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query Products($skip: Int = 0, $limit: Int) {
+      all_product(locale: "en-us", skip: $skip, limit: $limit) {
+        __typename
+        items {
+          __typename
+          title
+          description
+          price
+          featured_imageConnection(limit: 10) {
+            __typename
+            edges {
+              __typename
+              node {
+                __typename
+                ...AssetFile
+              }
+            }
+          }
+          categoryConnection {
+            __typename
+            edges {
+              __typename
+              node {
+                __typename
+                ... on Category {
+                  category_type
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    """
 
-  public var queryDocument: String { return operationDefinition.appending(Asset.fragmentDefinition) }
+  public let operationName: String = "Products"
+
+  public var queryDocument: String { return operationDefinition.appending(AssetFile.fragmentDefinition) }
 
   public var skip: Int?
   public var limit: Int?
@@ -21,11 +60,13 @@ public final class ProductsQuery: GraphQLQuery {
   }
 
   public struct Data: GraphQLSelectionSet {
-    public static let possibleTypes = ["Query"]
+    public static let possibleTypes: [String] = ["Query"]
 
-    public static let selections: [GraphQLSelection] = [
-      GraphQLField("all_product", arguments: ["locale": "en-us", "skip": GraphQLVariable("skip"), "limit": GraphQLVariable("limit")], type: .object(AllProduct.selections)),
-    ]
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("all_product", arguments: ["locale": "en-us", "skip": GraphQLVariable("skip"), "limit": GraphQLVariable("limit")], type: .object(AllProduct.selections)),
+      ]
+    }
 
     public private(set) var resultMap: ResultMap
 
@@ -37,6 +78,7 @@ public final class ProductsQuery: GraphQLQuery {
       self.init(unsafeResultMap: ["__typename": "Query", "all_product": allProduct.flatMap { (value: AllProduct) -> ResultMap in value.resultMap }])
     }
 
+    /// Fetch multiple entries
     public var allProduct: AllProduct? {
       get {
         return (resultMap["all_product"] as? ResultMap).flatMap { AllProduct(unsafeResultMap: $0) }
@@ -47,12 +89,14 @@ public final class ProductsQuery: GraphQLQuery {
     }
 
     public struct AllProduct: GraphQLSelectionSet {
-      public static let possibleTypes = ["AllProduct"]
+      public static let possibleTypes: [String] = ["AllProduct"]
 
-      public static let selections: [GraphQLSelection] = [
-        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("items", type: .list(.object(Item.selections))),
-      ]
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("items", type: .list(.object(Item.selections))),
+        ]
+      }
 
       public private(set) var resultMap: ResultMap
 
@@ -73,6 +117,7 @@ public final class ProductsQuery: GraphQLQuery {
         }
       }
 
+      /// Items of the content type queried
       public var items: [Item?]? {
         get {
           return (resultMap["items"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Item?] in value.map { (value: ResultMap?) -> Item? in value.flatMap { (value: ResultMap) -> Item in Item(unsafeResultMap: value) } } }
@@ -83,15 +128,18 @@ public final class ProductsQuery: GraphQLQuery {
       }
 
       public struct Item: GraphQLSelectionSet {
-        public static let possibleTypes = ["Product"]
+        public static let possibleTypes: [String] = ["Product"]
 
-        public static let selections: [GraphQLSelection] = [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("title", type: .scalar(String.self)),
-          GraphQLField("description", type: .scalar(String.self)),
-          GraphQLField("price", type: .scalar(Double.self)),
-          GraphQLField("featured_image", type: .list(.object(FeaturedImage.selections))),
-        ]
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("title", type: .scalar(String.self)),
+            GraphQLField("description", type: .scalar(String.self)),
+            GraphQLField("price", type: .scalar(Int.self)),
+            GraphQLField("featured_imageConnection", arguments: ["limit": 10], type: .object(FeaturedImageConnection.selections)),
+            GraphQLField("categoryConnection", type: .object(CategoryConnection.selections)),
+          ]
+        }
 
         public private(set) var resultMap: ResultMap
 
@@ -99,8 +147,8 @@ public final class ProductsQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(title: String? = nil, description: String? = nil, price: Double? = nil, featuredImage: [FeaturedImage?]? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Product", "title": title, "description": description, "price": price, "featured_image": featuredImage.flatMap { (value: [FeaturedImage?]) -> [ResultMap?] in value.map { (value: FeaturedImage?) -> ResultMap? in value.flatMap { (value: FeaturedImage) -> ResultMap in value.resultMap } } }])
+        public init(title: String? = nil, description: String? = nil, price: Int? = nil, featuredImageConnection: FeaturedImageConnection? = nil, categoryConnection: CategoryConnection? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Product", "title": title, "description": description, "price": price, "featured_imageConnection": featuredImageConnection.flatMap { (value: FeaturedImageConnection) -> ResultMap in value.resultMap }, "categoryConnection": categoryConnection.flatMap { (value: CategoryConnection) -> ResultMap in value.resultMap }])
         }
 
         public var __typename: String {
@@ -112,6 +160,7 @@ public final class ProductsQuery: GraphQLQuery {
           }
         }
 
+        /// Text field
         public var title: String? {
           get {
             return resultMap["title"] as? String
@@ -121,6 +170,7 @@ public final class ProductsQuery: GraphQLQuery {
           }
         }
 
+        /// Text field
         public var description: String? {
           get {
             return resultMap["description"] as? String
@@ -130,31 +180,45 @@ public final class ProductsQuery: GraphQLQuery {
           }
         }
 
-        public var price: Double? {
+        /// Number field
+        public var price: Int? {
           get {
-            return resultMap["price"] as? Double
+            return resultMap["price"] as? Int
           }
           set {
             resultMap.updateValue(newValue, forKey: "price")
           }
         }
 
-        public var featuredImage: [FeaturedImage?]? {
+        /// Asset field
+        public var featuredImageConnection: FeaturedImageConnection? {
           get {
-            return (resultMap["featured_image"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [FeaturedImage?] in value.map { (value: ResultMap?) -> FeaturedImage? in value.flatMap { (value: ResultMap) -> FeaturedImage in FeaturedImage(unsafeResultMap: value) } } }
+            return (resultMap["featured_imageConnection"] as? ResultMap).flatMap { FeaturedImageConnection(unsafeResultMap: $0) }
           }
           set {
-            resultMap.updateValue(newValue.flatMap { (value: [FeaturedImage?]) -> [ResultMap?] in value.map { (value: FeaturedImage?) -> ResultMap? in value.flatMap { (value: FeaturedImage) -> ResultMap in value.resultMap } } }, forKey: "featured_image")
+            resultMap.updateValue(newValue?.resultMap, forKey: "featured_imageConnection")
           }
         }
 
-        public struct FeaturedImage: GraphQLSelectionSet {
-          public static let possibleTypes = ["Assets"]
+        /// Multi reference
+        public var categoryConnection: CategoryConnection? {
+          get {
+            return (resultMap["categoryConnection"] as? ResultMap).flatMap { CategoryConnection(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "categoryConnection")
+          }
+        }
 
-          public static let selections: [GraphQLSelection] = [
-            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLFragmentSpread(Asset.self),
-          ]
+        public struct FeaturedImageConnection: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["AssetConnection"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("edges", type: .list(.object(Edge.selections))),
+            ]
+          }
 
           public private(set) var resultMap: ResultMap
 
@@ -162,8 +226,8 @@ public final class ProductsQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(filename: String? = nil, url: String? = nil) {
-            self.init(unsafeResultMap: ["__typename": "Assets", "filename": filename, "url": url])
+          public init(edges: [Edge?]? = nil) {
+            self.init(unsafeResultMap: ["__typename": "AssetConnection", "edges": edges.flatMap { (value: [Edge?]) -> [ResultMap?] in value.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } } }])
           }
 
           public var __typename: String {
@@ -175,28 +239,228 @@ public final class ProductsQuery: GraphQLQuery {
             }
           }
 
-          public var fragments: Fragments {
+          /// Asset edges
+          public var edges: [Edge?]? {
             get {
-              return Fragments(unsafeResultMap: resultMap)
+              return (resultMap["edges"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Edge?] in value.map { (value: ResultMap?) -> Edge? in value.flatMap { (value: ResultMap) -> Edge in Edge(unsafeResultMap: value) } } }
             }
             set {
-              resultMap += newValue.resultMap
+              resultMap.updateValue(newValue.flatMap { (value: [Edge?]) -> [ResultMap?] in value.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } } }, forKey: "edges")
             }
           }
 
-          public struct Fragments {
+          public struct Edge: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["AssetEdge"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("node", type: .object(Node.selections)),
+              ]
+            }
+
             public private(set) var resultMap: ResultMap
 
             public init(unsafeResultMap: ResultMap) {
               self.resultMap = unsafeResultMap
             }
 
-            public var asset: Asset {
+            public init(node: Node? = nil) {
+              self.init(unsafeResultMap: ["__typename": "AssetEdge", "node": node.flatMap { (value: Node) -> ResultMap in value.resultMap }])
+            }
+
+            public var __typename: String {
               get {
-                return Asset(unsafeResultMap: resultMap)
+                return resultMap["__typename"]! as! String
               }
               set {
-                resultMap += newValue.resultMap
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// Asset node
+            public var node: Node? {
+              get {
+                return (resultMap["node"] as? ResultMap).flatMap { Node(unsafeResultMap: $0) }
+              }
+              set {
+                resultMap.updateValue(newValue?.resultMap, forKey: "node")
+              }
+            }
+
+            public struct Node: GraphQLSelectionSet {
+              public static let possibleTypes: [String] = ["Asset"]
+
+              public static var selections: [GraphQLSelection] {
+                return [
+                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLFragmentSpread(AssetFile.self),
+                ]
+              }
+
+              public private(set) var resultMap: ResultMap
+
+              public init(unsafeResultMap: ResultMap) {
+                self.resultMap = unsafeResultMap
+              }
+
+              public init(filename: String, url: String) {
+                self.init(unsafeResultMap: ["__typename": "Asset", "filename": filename, "url": url])
+              }
+
+              public var __typename: String {
+                get {
+                  return resultMap["__typename"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "__typename")
+                }
+              }
+
+              public var fragments: Fragments {
+                get {
+                  return Fragments(unsafeResultMap: resultMap)
+                }
+                set {
+                  resultMap += newValue.resultMap
+                }
+              }
+
+              public struct Fragments {
+                public private(set) var resultMap: ResultMap
+
+                public init(unsafeResultMap: ResultMap) {
+                  self.resultMap = unsafeResultMap
+                }
+
+                public var assetFile: AssetFile {
+                  get {
+                    return AssetFile(unsafeResultMap: resultMap)
+                  }
+                  set {
+                    resultMap += newValue.resultMap
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        public struct CategoryConnection: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["ProductCategoryConnection"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("edges", type: .list(.object(Edge.selections))),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(edges: [Edge?]? = nil) {
+            self.init(unsafeResultMap: ["__typename": "ProductCategoryConnection", "edges": edges.flatMap { (value: [Edge?]) -> [ResultMap?] in value.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } } }])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          /// Reference field edges
+          public var edges: [Edge?]? {
+            get {
+              return (resultMap["edges"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Edge?] in value.map { (value: ResultMap?) -> Edge? in value.flatMap { (value: ResultMap) -> Edge in Edge(unsafeResultMap: value) } } }
+            }
+            set {
+              resultMap.updateValue(newValue.flatMap { (value: [Edge?]) -> [ResultMap?] in value.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } } }, forKey: "edges")
+            }
+          }
+
+          public struct Edge: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["ProductCategoryEdge"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("node", type: .object(Node.selections)),
+              ]
+            }
+
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public init(node: Node? = nil) {
+              self.init(unsafeResultMap: ["__typename": "ProductCategoryEdge", "node": node.flatMap { (value: Node) -> ResultMap in value.resultMap }])
+            }
+
+            public var __typename: String {
+              get {
+                return resultMap["__typename"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// Reference nodes
+            public var node: Node? {
+              get {
+                return (resultMap["node"] as? ResultMap).flatMap { Node(unsafeResultMap: $0) }
+              }
+              set {
+                resultMap.updateValue(newValue?.resultMap, forKey: "node")
+              }
+            }
+
+            public struct Node: GraphQLSelectionSet {
+              public static let possibleTypes: [String] = ["Category"]
+
+              public static var selections: [GraphQLSelection] {
+                return [
+                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("category_type", type: .scalar(String.self)),
+                ]
+              }
+
+              public private(set) var resultMap: ResultMap
+
+              public init(unsafeResultMap: ResultMap) {
+                self.resultMap = unsafeResultMap
+              }
+
+              public init(categoryType: String? = nil) {
+                self.init(unsafeResultMap: ["__typename": "Category", "category_type": categoryType])
+              }
+
+              public var __typename: String {
+                get {
+                  return resultMap["__typename"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "__typename")
+                }
+              }
+
+              /// Text field
+              public var categoryType: String? {
+                get {
+                  return resultMap["category_type"] as? String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "category_type")
+                }
               }
             }
           }
@@ -206,17 +470,26 @@ public final class ProductsQuery: GraphQLQuery {
   }
 }
 
-public struct Asset: GraphQLFragment {
-  public static let fragmentDefinition =
-    "fragment Asset on Assets {\n  __typename\n  filename\n  url\n}"
+public struct CategoryFile: GraphQLFragment {
+  /// The raw GraphQL definition of this fragment.
+  public static let fragmentDefinition: String =
+    """
+    fragment CategoryFile on Category {
+      __typename
+      category_type
+      url
+    }
+    """
 
-  public static let possibleTypes = ["Assets"]
+  public static let possibleTypes: [String] = ["Category"]
 
-  public static let selections: [GraphQLSelection] = [
-    GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-    GraphQLField("filename", type: .scalar(String.self)),
-    GraphQLField("url", type: .scalar(String.self)),
-  ]
+  public static var selections: [GraphQLSelection] {
+    return [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("category_type", type: .scalar(String.self)),
+      GraphQLField("url", type: .scalar(String.self)),
+    ]
+  }
 
   public private(set) var resultMap: ResultMap
 
@@ -224,8 +497,8 @@ public struct Asset: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(filename: String? = nil, url: String? = nil) {
-    self.init(unsafeResultMap: ["__typename": "Assets", "filename": filename, "url": url])
+  public init(categoryType: String? = nil, url: String? = nil) {
+    self.init(unsafeResultMap: ["__typename": "Category", "category_type": categoryType, "url": url])
   }
 
   public var __typename: String {
@@ -237,18 +510,81 @@ public struct Asset: GraphQLFragment {
     }
   }
 
-  public var filename: String? {
+  /// Text field
+  public var categoryType: String? {
     get {
-      return resultMap["filename"] as? String
+      return resultMap["category_type"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "category_type")
+    }
+  }
+
+  /// Text field
+  public var url: String? {
+    get {
+      return resultMap["url"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "url")
+    }
+  }
+}
+
+public struct AssetFile: GraphQLFragment {
+  /// The raw GraphQL definition of this fragment.
+  public static let fragmentDefinition: String =
+    """
+    fragment AssetFile on Asset {
+      __typename
+      filename
+      url
+    }
+    """
+
+  public static let possibleTypes: [String] = ["Asset"]
+
+  public static var selections: [GraphQLSelection] {
+    return [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("filename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("url", type: .nonNull(.scalar(String.self))),
+    ]
+  }
+
+  public private(set) var resultMap: ResultMap
+
+  public init(unsafeResultMap: ResultMap) {
+    self.resultMap = unsafeResultMap
+  }
+
+  public init(filename: String, url: String) {
+    self.init(unsafeResultMap: ["__typename": "Asset", "filename": filename, "url": url])
+  }
+
+  public var __typename: String {
+    get {
+      return resultMap["__typename"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "__typename")
+    }
+  }
+
+  /// Asset filename
+  public var filename: String {
+    get {
+      return resultMap["filename"]! as! String
     }
     set {
       resultMap.updateValue(newValue, forKey: "filename")
     }
   }
 
-  public var url: String? {
+  /// Asset url
+  public var url: String {
     get {
-      return resultMap["url"] as? String
+      return resultMap["url"]! as! String
     }
     set {
       resultMap.updateValue(newValue, forKey: "url")

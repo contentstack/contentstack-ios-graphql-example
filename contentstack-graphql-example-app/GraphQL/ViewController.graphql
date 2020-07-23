@@ -4,15 +4,18 @@ query Products($skip: Int = 0 ,$limit: Int){
             title
             description
             price
-            featured_image {
-                ...Asset
-                
+            featured_imageConnection (limit: 10){
+                edges{
+                    node {
+                        ...AssetFile
+                    }
+                }
             }
         }
     }
 }
 
-fragment Asset on Assets {
+fragment AssetFile on Asset {
     filename
     url
 }
