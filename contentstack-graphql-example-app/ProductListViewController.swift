@@ -8,7 +8,7 @@
 
 import UIKit
 import Apollo
-import SVPullToRefresh
+
 class ProductListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     let refresh : UIRefreshControl = UIRefreshControl(frame: CGRect.zero)
@@ -43,34 +43,39 @@ class ProductListViewController: UIViewController {
     }
     
     func getProductList(skip: Int)  {
-        AppDelegate.share.contentstackService.graphQLClient.fetch(query: ProductsQuery(skip: skip, limit: 5), cachePolicy: CachePolicy.fetchIgnoringCacheData, queue: DispatchQueue.main, resultHandler: {[weak self]  result, error in
+        AppDelegate.share.contentstackService.graphQLClient.fetch (query: ProductsQuery(skip: skip, limit: 5), cachePolicy: CachePolicy.fetchIgnoringCacheData, queue: DispatchQueue.main) {[weak self] (result: Result<GraphQLResult<ProductsQuery.Data>, Error>) in
             guard let slf = self else {
-                return
-            }
-            if skip == 0 {
-                var indexPaths : [IndexPath] = []
-                for i in 0..<slf.productArray.count {
-                    indexPaths.append(IndexPath(item: i, section: 0))
+                           return
+                       }
+            switch result {
+            case .success(let graphQLResult):
+                if skip == 0 {
+                    var indexPaths : [IndexPath] = []
+                    for i in 0..<slf.productArray.count {
+                        indexPaths.append(IndexPath(item: i, section: 0))
+                    }
+                    slf.productArray.removeAll()
+                    slf.collectionView.deleteItems(at: indexPaths)
+                    slf.refresh.endRefreshing()
                 }
-                slf.productArray.removeAll()
-                slf.collectionView.deleteItems(at: indexPaths)
-                slf.refresh.endRefreshing()
+                guard let data = graphQLResult.data, let products = data.allProduct?.items else {
+                               return
+                           }
+                           var indexPaths : [IndexPath] = []
+                           var index = slf.productArray.count
+                           for product in products {
+                               indexPaths.append(IndexPath(item: (index), section: 0))
+                               index += 1
+                               slf.productArray.append(product!)
+                           }
+                           slf.collectionView.insertItems(at: indexPaths)
+                           
+                           slf.collectionView.showsInfiniteScrolling = true
+                           slf.collectionView.infiniteScrollingView.stopAnimating()
+            case .failure(let error):
+              print("Failure! Error: \(error)")
             }
-            guard let resultS = result, let data = resultS.data, let products = data.allProduct?.items else {
-                return
-            }
-            var indexPaths : [IndexPath] = []
-            var index = slf.productArray.count
-            for product in products {
-                indexPaths.append(IndexPath(item: (index), section: 0))
-                index += 1
-                slf.productArray.append(product!)
-            }
-            slf.collectionView.insertItems(at: indexPaths)
-            
-            slf.collectionView.showsInfiniteScrolling = true
-            slf.collectionView.infiniteScrollingView.stopAnimating()
-        })
+        }
     }
 }
 
@@ -88,8 +93,12 @@ extension ProductListViewController: UICollectionViewDataSource {
         let product = productArray[indexPath.row]
         cell.productName.text = product.title
         cell.productPrice.text = "\(String(describing: product.price!))"
-        if let featuredIMG = product.featuredImage?.first {
-            cell.productImage.loadImage(urlString: featuredIMG?.fragments.asset.url)
+        if let imageConnection = product.featuredImageConnection,
+            let edges = imageConnection.edges,
+            let edge = edges.first,
+            let node = edge?.node
+        {
+            cell.productImage.loadImage(urlString: node.fragments.assetFile.url)
         }
         return cell
     }

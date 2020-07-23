@@ -1,5 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "1A226A75-BADA-4AAF-89D5-4B97B40B8FEB"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CD6AB37-FFB2-435C-ACAB-0C41BAE3F2F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Apollo/Sources/Apollo/ApolloClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "handleOperationResult(shouldPublishResultToStore:context:_:resultHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A7B33B5-C951-47FF-81D0-8F31AF304008"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Apollo/Sources/Apollo/HTTPNetworkTransport.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "send(operation:isPersistedQueryRetry:files:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6D2532D-AAD2-4049-831F-2202C7233473"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Apollo/Sources/Apollo/GraphQLQueryWatcher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "fetch(cachePolicy:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B6D2532D-AAD2-4049-831F-2202C7233473 - 5c083746a3cf4a37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Apollo.GraphQLQueryWatcher.fetch(cachePolicy: Apollo.CachePolicy) -&gt; ()"
+                  moduleName = "contentstack-graphql-example-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uttamukkoji/Documents/GitHub/contentstack-ios-graphql-example/Pods/Apollo/Sources/Apollo/GraphQLQueryWatcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "364">
+               </Location>
+               <Location
+                  uuid = "B6D2532D-AAD2-4049-831F-2202C7233473 - b29e5dcb08350bb8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Apollo.GraphQLResult&lt;A.Data&gt;, Swift.Error&gt;) -&gt; () in Apollo.GraphQLQueryWatcher.fetch(cachePolicy: Apollo.CachePolicy) -&gt; ()"
+                  moduleName = "contentstack-graphql-example-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uttamukkoji/Documents/GitHub/contentstack-ios-graphql-example/Pods/Apollo/Sources/Apollo/GraphQLQueryWatcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "335">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CA8FBFA-C5F2-4E0B-A708-0EC5E18E1BAD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Apollo/Sources/Apollo/ApolloClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "send(operation:shouldPublishResultToStore:context:resultHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1CA8FBFA-C5F2-4E0B-A708-0EC5E18E1BAD - 6dc963c06bd430fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Apollo.ApolloClient.(send in _5F19D33E96514915F6F483642855496F)&lt;A where A: Apollo.GraphQLOperation&gt;(operation: A, shouldPublishResultToStore: Swift.Bool, context: Swift.Optional&lt;Swift.UnsafeMutableRawPointer&gt;, resultHandler: (Swift.Result&lt;Apollo.GraphQLResult&lt;A.Data&gt;, Swift.Error&gt;) -&gt; ()) -&gt; Apollo.Cancellable"
+                  moduleName = "contentstack-graphql-example-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uttamukkoji/Documents/GitHub/contentstack-ios-graphql-example/Pods/Apollo/Sources/Apollo/ApolloClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "1CA8FBFA-C5F2-4E0B-A708-0EC5E18E1BAD - 47026f81a6c990fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Apollo.GraphQLResponse&lt;A.Data&gt;, Swift.Error&gt;) -&gt; () in Apollo.ApolloClient.(send in _5F19D33E96514915F6F483642855496F)&lt;A where A: Apollo.GraphQLOperation&gt;(operation: A, shouldPublishResultToStore: Swift.Bool, context: Swift.Optional&lt;Swift.UnsafeMutableRawPointer&gt;, resultHandler: (Swift.Result&lt;Apollo.GraphQLResult&lt;A.Data&gt;, Swift.Error&gt;) -&gt; ()) -&gt; Apollo.Cancellable"
+                  moduleName = "contentstack-graphql-example-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uttamukkoji/Documents/GitHub/contentstack-ios-graphql-example/Pods/Apollo/Sources/Apollo/ApolloClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "372">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
