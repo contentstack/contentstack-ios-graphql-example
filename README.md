@@ -1,6 +1,6 @@
-# Build an example app using Contentstack iOS SDK, GraphQL API, and Apollo Client
+# Build an example app using Contentstack GraphQL API, and Apollo Client
 
-We have created a sample product catalog app that is built using Contentstack’s iOS SDK. The content of this app is powered by Contentstack GraphQL APIs, and the app uses Apollo client on the client side to consume GraphQL APIs.
+We have created a sample product catalog app that is built using Apollo Client iOS SDK. The content of this app is powered by Contentstack GraphQL APIs, and the app uses Apollo client on the client side to consume GraphQL APIs.
 
 This document covers the steps to get this app up and running for you. Try out the app and play with it, before building bigger and better applications.
 
@@ -17,7 +17,7 @@ This document covers the steps to get this app up and running for you. Try out t
 ## Step 1: Create a stack
 Log in to your Contentstack account, and [create a new stack](https://www.contentstack.com/docs/guide/stack#create-a-new-stack). Read more about [stack](https://www.contentstack.com/docs/guide/stack).
 
-## Step 2: Add a publishing environment
+## Step 2: Add a publishing environment 
 [Add a publishing environment](https://www.contentstack.com/docs/guide/environments#add-an-environment) to publish your content in Contentstack. Provide the necessary details as per your requirement. Read more about [environments](https://www.contentstack.com/docs/guide/environments).
 
 ## Step 3: Import content types
@@ -41,6 +41,8 @@ To get your app up and running quickly, we have created a sample iOS app for thi
 $ git clone https://github.com/contentstack/contentstack-ios-graphql-example.git
 ```
   
+Once you have downloaded the project, add your Contentstack API Key, Delivery Token, and Environment to the project during the SDK initialization step. (Learn how to find your Stack's [API Key](https://www.contentstack.com/docs/guide/stack#edit-a-stack) and [Delivery Token](https://www.contentstack.com/docs/guide/tokens#create-a-delivery-token). Read more about [Environments](https://www.contentstack.com/docs/guide/environments).).
+
 Open variables.xcconfig and inject your credentials so it looks like this:
 ```
 CONTENTSTACK_API_KEY=<API_KEY>  
@@ -63,11 +65,11 @@ Refer the [Downloading Schema](https://www.apollographql.com/docs/ios/downloadin
 ## Step 8: Write your GraphQL queries
 Contentstack provides a GraphQL playground, which is a GraphiQL interface, to test your GraphQL queries in your browser. Use this interface to write and test your queries.
 
-Open a browser of your choice and hit the URL given below (after entering the required details):
+Open a browser of your choice and hit the URL given below:
 ```
-"https://graphql.contentstack.com/stacks/<API_KEY>?environment=<ENVIRONMENT_NAME>&access_token=<ENVIRONMENT_SPECIFIC_DELIVERY_TOKEN>"
+https://www.contentstack.com/docs/apis/graphql-content-delivery-api/explorer?api_key=<API_KEY>&access_token=<ENVIRONMENT_SPECIFIC_DELIVERY_TOKEN>&environment=<ENVIRONMENT_NAME>
 ```
- 
+
 Now to get the list of all entries of the Product content type within the ProductListViewController.swift create a file named ProductListViewController.graphql and add the following code snippet to get.
 
 ```
@@ -152,6 +154,6 @@ Now that we have a working project, you can build and run it.
 
 ## More Resources
 - [Getting started with iOS SDK](https://www.contentstack.com/docs/platforms/ios)
-- [Using GraphQL queries with iOS SDK](https://www.contentstack.com/docs/guide/contentstack-graphql-api/using-graphql-with-contentstack-ios-sdk)
+- [Using GraphQL queries with Apollo Client iOS SDK](https://www.contentstack.com/docs/guide/contentstack-graphql-api/using-graphql-with-apollo-client-ios-sdk)
 - [GraphQL API documentation](https://www.contentstack.com/docs/apis/graphql-content-delivery-api/)
 
