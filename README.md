@@ -9,8 +9,8 @@ This document covers the steps to get this app up and running for you. Try out t
 
 ## Prerequisite
 
--   [Xcode 10.1 and later](https://developer.apple.com/xcode)
--   Mac OS X 10.14 and later
+-   [Xcode 11.1 and later](https://developer.apple.com/xcode)
+-   Mac OS X 10.15 and later
 -   [Contentstack account](https://www.app.contentstack.com/)
 -   [Basic knowledge of Contentstack](https://www.contentstack.com/docs/)
 
@@ -57,10 +57,10 @@ Install Apollo.framework into your project using Carthage, CocoaPods, or by manu
 ## Step 7: Download your schema
 Download the GraphQL schema for your content model using Apollo CLI, and place it in the root directory of your Xcode project:
 ```
-apollo schema:download --endpoint="https://graphql.contentstack.com/stacks/<API_KEY>?access_token=<ENVIRONMENT_SPECIFIC_DELIVERY_TOKEN>&environment=<ENVIRONMENT_NAME>"
+apollo schema:download --endpoint="https://graphql.contentstack.com/stacks/<API_KEY>?environment=<ENVIRONMENT_NAME>" --header="access_token: <ENVIRONMENT_SPECIFIC_DELIVERY_TOKEN>"
 ```
-  
-Refer the [Downloading Schema](https://www.apollographql.com/docs/ios/downloading-schema.html) doc for more information.
+
+Refer the [Downloading Schema](https://www.apollographql.com/docs/ios/downloading-schema.html) doc for more information.  
 
 ## Step 8: Write your GraphQL queries
 Contentstack provides a GraphQL playground, which is a GraphiQL interface, to test your GraphQL queries in your browser. Use this interface to write and test your queries.
@@ -74,23 +74,28 @@ Now to get the list of all entries of the Product content type within the Produc
 
 ```
 query Products($skip: Int = 0 ,$limit: Int){
-	all_product(locale:"en-us", skip:$skip, limit:$limit) {
-	 	items {
-			title
-      			description
-			price
-      			featured_image {
-        			...Asset
-      			}
-	   	}
-	}
+    all_product(locale:"en-us",skip:$skip,limit:$limit) {
+        items {
+            title
+            description
+            price
+            featured_imageConnection (limit: 10){
+                edges{
+                    node {
+                        ...AssetFile
+                    }
+                }
+            }
+        }
+    }
 }
 
-fragment Asset on Assets {
-	url
- 	filename
-  	file_size
+fragment AssetFile on Asset {
+    filename
+    url
 }
+
+
 ```
 
 Note:
@@ -108,15 +113,9 @@ Now, you need to, create a build step and make sure that it runs before ‘Compi
 4.  Drag this script just above Compile Sources. This opens the script area. Add the following content into it:  
       
 ```
-APOLLO_FRAMEWORK_PATH="$(eval find $FRAMEWORK_SEARCH_PATHS -name "Apollo.framework" -maxdepth 1)"  
-  
-if [ -z "$APOLLO_FRAMEWORK_PATH" ]; then  
-echo "error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project."  
-exit 1  
-fi  
-  
-cd "${SRCROOT}/${TARGET_NAME}"  
-$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-cli.sh codegen:generate --queries="$(find . -name '*.graphql')" --schema=schema.json API.swift
+SCRIPT_PATH="${PODS_ROOT}/Apollo/scripts"
+cd "${SRCROOT}/${TARGET_NAME}"
+"${SCRIPT_PATH}"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile="schema.json" API.swift
 ```
 
 Now, build your project. This will generate the API.swift file in project dictionary add it to Xcode project.
@@ -127,9 +126,12 @@ After downloading the schema and creating the queries, create an instance of Apo
 To do this, define a global variable in AppDelegate.swift by using an immediately invoked closure as follows:
 
 ```
+
 let apollo: ApolloClient = {  
-	let url = URL(string: "https://graphql.contentstack.com/stacks/<API_KEY>?access_token=<ENVIRONMENT_SPECIFIC_DELIVERY_TOKEN>&environment=<ENVIRONMENT_NAME>")!  
-	return  ApolloClient(networkTransport: HTTPNetworkTransport(url: url))  
+    let url = URL(string: "https://\(credentials.domainHost)/stacks/\(credentials.apiKey)?environment=\(credentials.environmentToken)")!
+    let configuration = URLSessionConfiguration.default
+    configuration.httpAdditionalHeaders = ["access_token": credentials.deliveryAPIAccessToken]
+    return  ApolloClient(networkTransport: HTTPNetworkTransport(url: url, client: URLSessionClient(sessionConfiguration: configuration)))
 }()
 ```
   
