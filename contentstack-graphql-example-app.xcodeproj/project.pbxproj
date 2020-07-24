@@ -27,7 +27,7 @@
 		0FEB843521E353730047A6A1 /* ContentstackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB843421E353730047A6A1 /* ContentstackService.swift */; };
 		0FF4878E21E728AA002CA1A3 /* contentstack_graphql_example_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4878D21E728AA002CA1A3 /* contentstack_graphql_example_appTests.swift */; };
 		0FF9DC7B2200776000BA1FFF /* ProductList.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9DC7A2200776000BA1FFF /* ProductList.png */; };
-		9758CB27AE8C681316BDED32 /* Pods_contentstack_graphql_example_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0CE3EFC416BD4DD15F01B7 /* Pods_contentstack_graphql_example_app.framework */; };
+		EE6E326CFE0201528172FE97 /* libPods-contentstack-graphql-example-app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7577B130F7449D195D8A34 /* libPods-contentstack-graphql-example-app.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E7577B130F7449D195D8A34 /* libPods-contentstack-graphql-example-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-contentstack-graphql-example-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F701B0021DCE5440005D5DF /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = "contentstack-graphql-example-app/API.swift"; sourceTree = SOURCE_ROOT; };
 		0F701B0221DCEADB0005D5DF /* variables.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = variables.xcconfig; sourceTree = "<group>"; };
 		0F701B0421DCECD30005D5DF /* ContentstackCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentstackCredentials.swift; sourceTree = "<group>"; };
+		0F9A459924C9ADD800270BF4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0FDA963221DC92F600D89C85 /* contentstack-graphql-example-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "contentstack-graphql-example-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDA963521DC92F600D89C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FDA963721DC92F600D89C85 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +73,6 @@
 		640A1F7E3367D303DE15C603 /* Pods-contentstack-graphal-example-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-contentstack-graphal-example-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-contentstack-graphal-example-app/Pods-contentstack-graphal-example-app.release.xcconfig"; sourceTree = "<group>"; };
 		69C557790CA582B91F8D0DAE /* Pods-contentstack-graphql-example-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-contentstack-graphql-example-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app.debug.xcconfig"; sourceTree = "<group>"; };
 		972D31323D51636423C53E15 /* Pods-contentstack-graphql-example-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-contentstack-graphql-example-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app.release.xcconfig"; sourceTree = "<group>"; };
-		9F0CE3EFC416BD4DD15F01B7 /* Pods_contentstack_graphql_example_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_contentstack_graphql_example_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9758CB27AE8C681316BDED32 /* Pods_contentstack_graphql_example_app.framework in Frameworks */,
+				EE6E326CFE0201528172FE97 /* libPods-contentstack-graphql-example-app.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +97,7 @@
 		0FDA962921DC92F600D89C85 = {
 			isa = PBXGroup;
 			children = (
+				0F9A459924C9ADD800270BF4 /* README.md */,
 				0F701B0221DCEADB0005D5DF /* variables.xcconfig */,
 				0FDA963421DC92F600D89C85 /* contentstack-graphql-example-app */,
 				0FF4878C21E728AA002CA1A3 /* contentstack-graphql-example-appTests */,
@@ -213,7 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				370D7AF7CF2985134746C43C /* Pods_contentstack_graphal_example_app.framework */,
-				9F0CE3EFC416BD4DD15F01B7 /* Pods_contentstack_graphql_example_app.framework */,
+				0E7577B130F7449D195D8A34 /* libPods-contentstack-graphql-example-app.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -230,7 +232,6 @@
 				0FDA962E21DC92F600D89C85 /* Sources */,
 				0FDA962F21DC92F600D89C85 /* Frameworks */,
 				0FDA963021DC92F600D89C85 /* Resources */,
-				0DC089F35BC223B5DCA25E5F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -322,30 +323,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DC089F35BC223B5DCA25E5F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
-				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-contentstack-graphql-example-app/Pods-contentstack-graphql-example-app-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		0FDA964921DC93E700D89C85 /* Generate Apollo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,7 +339,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-cli.sh codegen:generate --queries=\"$(find . -name '*.graphql')\" --schema=schema.json API.swift\n\n";
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
 		};
 		620E6471F19D721A35358B73 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
