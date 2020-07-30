@@ -55,12 +55,16 @@ CONTENTSTACK_HOST_NAME=<HOST_NAME>
 Install Apollo.framework into your project using Carthage, CocoaPods, or by manually integrating it with Xcode. Refer the [Installation](https://www.apollographql.com/docs/ios/installation.html#installing-framework) doc for more information.
 
 ## Step 7: Download your schema
+### Download schema using Apollo CLI
 Download the GraphQL schema for your content model using Apollo CLI, and place it in the root directory of your Xcode project:
 ```
 apollo schema:download --endpoint="https://graphql.contentstack.com/stacks/<API_KEY>?environment=<ENVIRONMENT_NAME>" --header="access_token: <ENVIRONMENT_SPECIFIC_DELIVERY_TOKEN>"
 ```
 
-Refer the [Downloading Schema](https://www.apollographql.com/docs/ios/downloading-schema.html) doc for more information.  
+Refer the [Downloading Schema](https://www.apollographql.com/docs/ios/downloading-schema.html) doc for more information. 
+
+### Download schema using Contentstack schema download
+- Download the GraphQL schema for your content model using [Contentstack GraphQL Schema Download](https://github.com/contentstack/contentstack-graphql-schema-download.git), and place it in the root directory of your Xcode project.
 
 ## Step 8: Write your GraphQL queries
 Contentstack provides a GraphQL playground, which is a GraphiQL interface, to test your GraphQL queries in your browser. Use this interface to write and test your queries.
