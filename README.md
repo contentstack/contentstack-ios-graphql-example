@@ -71,7 +71,7 @@ Contentstack provides a GraphQL playground, which is a GraphiQL interface, to te
 
 Open a browser of your choice and hit the URL given below:
 ```
-https://www.contentstack.com/docs/apis/graphql-content-delivery-api/explorer?api_key=<API_KEY>&access_token=<ENVIRONMENT_SPECIFIC_DELIVERY_TOKEN>&environment=<ENVIRONMENT_NAME>
+https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/explorer/
 ```
 
 Now to get the list of all entries of the Product content type within the ProductListViewController.swift create a file named ProductListViewController.graphql and add the following code snippet to get.
