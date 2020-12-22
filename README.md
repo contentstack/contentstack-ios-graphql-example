@@ -86,7 +86,7 @@ query Products($skip: Int = 0 ,$limit: Int){
     }
 }
 
-fragment AssetFile on Asset {
+fragment AssetFile on SysAsset {
     filename
     url
 }
