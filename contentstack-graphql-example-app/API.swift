@@ -33,7 +33,7 @@ public final class ProductsQuery: GraphQLQuery {
 
   public let operationName: String = "Products"
 
-  public var queryDocument: String { return operationDefinition.appending(AssetFile.fragmentDefinition) }
+  public var queryDocument: String { return operationDefinition.appending("\n" + AssetFile.fragmentDefinition) }
 
   public var skip: Int?
   public var limit: Int?
