@@ -1,0 +1,22 @@
+PODS:
+  - Apollo (0.30.0):
+    - Apollo/Core (= 0.30.0)
+  - Apollo/Core (0.30.0)
+  - SVPullToRefresh (0.4.1)
+
+DEPENDENCIES:
+  - Apollo (= 0.30)
+  - SVPullToRefresh
+
+SPEC REPOS:
+  trunk:
+    - Apollo
+    - SVPullToRefresh
+
+SPEC CHECKSUMS:
+  Apollo: c10bf1a4c7db5237be1056ace16347cd1cdcb863
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+
+PODFILE CHECKSUM: c0b245c965f4dc38a63136859869afb7f5ce6c8c
+
+COCOAPODS: 1.16.2

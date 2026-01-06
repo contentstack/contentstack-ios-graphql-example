@@ -20,8 +20,8 @@ class ImageLoadManager: Any {
     
     func downloadImage(withUrl url: String, shouldStore: Bool, completion: @escaping ((_ url: String, _ hashable: UIImage?) -> Swift.Void)) -> Operation? {
         
-        if FileManager.default.fileExists(atPath: ImageDownloadOperation.pathForDictionary.appendingPathComponent(url.md5).path) {
-            if let responseData = FileManager.default.contents(atPath: ImageDownloadOperation.pathForDictionary.appendingPathComponent(url.md5).path) {
+        if FileManager.default.fileExists(atPath: ImageDownloadOperation.pathForDictionary.appendingPathComponent(url.sha256).path) {
+            if let responseData = FileManager.default.contents(atPath: ImageDownloadOperation.pathForDictionary.appendingPathComponent(url.sha256).path) {
                 completion(url, responseData.animatedImageFromData())
             }else {
                 completion(url, nil)
