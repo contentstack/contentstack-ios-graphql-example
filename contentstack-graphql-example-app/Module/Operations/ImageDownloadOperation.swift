@@ -117,7 +117,7 @@ extension ImageDownloadOperation: URLSessionDelegate, URLSessionDownloadDelegate
 
                     }
                 }
-                let filePath = ImageDownloadOperation.pathForDictionary.appendingPathComponent(self.urlString.md5)
+                let filePath = ImageDownloadOperation.pathForDictionary.appendingPathComponent(self.urlString.sha256)
                 FileManager.default.createFile(atPath: filePath.path, contents: compressData, attributes: nil)
             }
             data = compressData
